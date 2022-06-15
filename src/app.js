@@ -6,6 +6,7 @@ const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Setup handlebars engine and views location
 app.set("view engine", "hbs");
@@ -92,6 +93,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("App running on 3000 port");
+app.listen(PORT, () => {
+  console.log("App running on port " + PORT);
 });
